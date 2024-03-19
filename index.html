@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Nº 01 - Tutoria - UNE</title>
+
+    <!----======== CSS ======== -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+
+        body {
+                overflow-x: hidden;
+
+        }
+
+        .linea-marcada {
+            border: 1px solid #007bff; /* Línea negra y gruesa */
+            margin-top: 10px; /* Espacio superior */
+            margin-bottom: 10px; /* Espacio inferior */
+            opacity: 0.3;
+        }
+
+        .footer-text {
+                font-size: 0.7rem; /* Reducir el tamaño de la fuente */
+        }
+
+        span {
+            font-size: 19px;
+            color:#007bff;
+            font-weight: bold;
+
+        }
+        .uni p {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+        .informe p {
+            font-size: 17px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="py-4 col-sm-12 col-md-8 col-lg-6 mx-auto shadow border bg-white p-4 rounded">
+
+                <header class="text-center uni mb-4">
+                    <p>UNIVERSIDAD NACIONAL DE EDUCACIÓN</p>
+                    <P>Enrique Guzmán y Valle</P>
+                    <p><em>Alma Máter del Magisterio Nacional</em></p>
+                    <img src="https://www.une.edu.pe/test/images/logoune.gif" alt="Logo" style="max-width: 100px;"/>
+                    <p>FACULTAD DE CIENCIAS SOCIALES Y HUMANIDADES</p>
+                </header>
+
+                <!-- Título del formulario -->
+                <section class="container-fluid bg-primary">
+                    <div class="mx-auto text-center">
+                        <h4 class="text-white text-wrap py-2">
+                            Ficha Nº 01 de Registro del Estudiante
+                        </h4>
+                    </div>
+                </section>
+
+    <hr class="linea-marcada">
+
+                <section class="text-left mb-4 informe">
+                    <p>Llenar la ficha de tutoria. Para consultas:</p>
+                    <ul class="pl-4">
+                    <li>
+                        <p>
+                            <i class="bi bi-envelope-fill text-primary"></i>
+                            <strong>Correo: ehuayre@une.edu.pe</strong>
+                        </p>
+                        
+                    </li>
+                    <li>
+                        <p>
+                            <i class="bi bi-telephone-fill text-primary"></i>
+                            <strong>Teléfono: 965345029</span></strong>
+                        </p>
+                    </li>
+                    </ul>   
+                </section>
+
+    <hr class="linea-marcada">
+                <section>
+                    <form id="myForm" onsubmit="handleFormSubmit(this)">
+
+                        <!--<div id="form_alerts"></div>-->
+
+                        <span class="title">Docente Tutor</span>
+
+                        <div class="row py-2">
+                            <div class="col-md-6 mb-3">
+                                <label for="Tutor" class="form-label">Nombre completo</label>
+                                <input type="text" id="Tutor" name="Tutor" class="form-control" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <span class="title">Datos Generales del Estudiante</span>
+
+                        <div class="row py-2">
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Nombres" class="form-label">Nombres</label>
+                                <input type="text" id="Nombres" name="Nombres" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Paterno" class="form-label">Apellido paterno</label>
+                                <input type="text" id="Paterno" name="Paterno" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Materno" class="form-label">Apellido materno</label>
+                                <input type="text" id="Materno" name="Materno" class="form-control" placeholder="" required>
+                            </div>
+
+                            
+                            <div class="col-md-4 mb-3">
+                                <label for="Codigo" class="form-label">Código</label>
+                                <input type="text" id="Codigo" name="Codigo" class="form-control" placeholder="" required>
+                            </div>
+    
+                            <div class="col-md-4 mb-3">
+                                    <label for="Correo" class="form-label">Correo institucional</label>
+                                    <input type="email" id="Correo" name="Correo" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Telefono" class="form-label">Teléfono</label>
+                                <input type="tel" id="Telefono" name="Telefono" class="form-control" placeholder="" required>
+                            </div>
+
+
+                            <div class="col-md-5 mb-3">
+                                <label for="fechaInicio" class="form-label">Inicio del ciclo académico</label>
+                                <input type="text" id="fechaInicio" name="fechaInicio" class="form-control" placeholder="1 de abril del 2024" disabled>
+                            </div>
+
+                            <div class="col-md-5 mb-3">
+                                <label for="fechaFinal" class="form-label">Término del ciclo académico</label>
+                                <input type="text" id="fechaFinal" name="fechaFinal" class="form-control" placeholder="22 de julio del 2024" disabled>
+                            </div>
+
+                            <div class="col-md-3 mb-3">
+                                <label for="Semestre" class="form-label">Semestre académico</label>
+                                <input type="text" id="Semestre" name="Semestre" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                            <label for="Especialidad" class="form-label">Especialidad</label>
+                            <input type="text" id="Especialidad" name="Especialidad" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-5 mb-3">
+                                <label for="Escuela" class="form-label">Escuela profesional</label>
+                                <select type="option" id="Escuela" name="Escuela" class="form-control"  placeholder="" required>
+                                    <option></option>
+                                    <option>Escuela Profesional de Ciencias Sociales</option>
+                                    <option>Escuela Profesional de Humanidades y Lenguas Nativas</option>
+                                    <option>Escuela Profesional de Lenguas Extranjeras</option>
+                                    <option>Escuela Profesional de Educación Artística</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Padre" class="form-label">Nombre completo del padre</label>
+                                <input type="text" id="Padre" name="Padre" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Madre" class="form-label">Nombre completo de la madre</label>
+                                <input type="text" id="Madre" name="Madre" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Tus_padres_viven_contigo" class="form-label">¿Viven contigo?</label>
+                                <select type="option" id="Tus_padres_viven_contigo" name="Tus_padres_viven_contigo" class="form-control" placeholder="" required>
+                                    <option></option>
+                                    <option>Si</option>
+                                    <option>No</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-7 mb-3">
+                                <label for="Con_quienes_vives" class="form-label">¿Con quienes vives?</label>
+                                <input type="text" id="Con_quienes_vives" name="Con_quienes_vives" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-5 mb-3">
+                                <label for="Tu_direccion" class="form-label">Dirección</label>
+                                <input type="text" id="Tu_direccion" name="Tu_direccion" class="form-control" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <span class="title">Ocupación Del Estudiante</span>
+                            
+                        <div class="row py-2">
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Tu_ocupacion" class="form-label">Ocupación</label>
+                                <select type="option" id="Tu_ocupacion" name="Tu_ocupacion" class="form-control" placeholder="" required>
+                                    <option></option>
+                                    <option>Trabajo</option>
+                                    <option>Estudio</option>
+                                    <option>Ambos</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Lugar_de_trabajo" class="form-label">Lugar de trabajo</label>
+                                <input type="text" id="Lugar_de_trabajo" name="Lugar_de_trabajo" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Financiamiento" class="form-label">¿Quién lo financia?</label>
+                                <select type="option" id="Financiamiento" name="Financiamiento" class="form-control" placeholder="" required>
+                                    <option></option>
+                                    <option>Yo mismo</option>
+                                    <option>Mis padres</option>
+                                    <option>Un Tutor</option>
+                                    <option>Un familiar</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <span class="title">Área Vocacional</span>
+
+                        <div class="row py-2">
+                            <div class="col-md-7 mb-3">
+                                <label for="Seguro_de_tu_carrera" class="form-label">¿Qué tan seguro estás respecto a la carrera que vas a estudiar?</label>
+                                <select type="option" id="Seguro_de_tu_carrera" name="Seguro_de_tu_carrera" class="form-control" required>
+                                    <option></option>
+                                    <option>Muy seguro</option>
+                                    <option>Medianamente seguro</option>
+                                    <option>No estoy seguro</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="Eleccion_carrera_voluntaria" class="form-label">¿Elegiste voluntariamente esta carrera? </label>
+                                <select type="option" id="Eleccion_carrera_voluntaria" name="Eleccion_carrera_voluntaria" class="form-control" required>
+                                    <option></option>
+                                    <option>Si</option>
+                                    <option>No</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="Carrera_opcional" class="form-label">¿Qué otra carrera estudiarías? </label>
+                                <input type="text" id="Carrera_opcional" name="Carrera_opcional" class="form-control" placeholder="" required>
+                            </div>
+                            
+                        </div>
+
+                        <span class="title">Área Académica</span>
+
+                        <div class="row py-2">
+                            <div class="col-md-6 mb-3">
+                                <label for="Colegio" class="form-label">Colegio de donde egreso</label>
+                                <input type="text" id="Colegio" name="Colegio" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="Año_egreso_colegio" class="form-label">Año de término</label>
+                                <input type="text" id="Año_egreso_colegio" name="Año_egreso_colegio" class="form-control" placeholder="" required>
+                            </div>
+
+                            <div class="col-md-8 mb-3">
+                                <label for="Estudiaste_antes" class="form-label">Antes de ingresar a la UNE, has realizado otros estudios</label>
+                                <select type="option" id="Estudiaste_antes" name="Estudiaste_antes" class="form-control" required>
+                                    <option></option>
+                                    <option>Si</option>
+                                    <option>No</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-5 mb-3">
+                                <label for="Estudio_anterior" class="form-label">Los estudios fueron:</label>
+                                <select type="option" id="Estudio_anterior" name="Estudio_anterior" class="form-control" required>
+                                    <option></option>
+                                    <option>Universidad completa</option>
+                                    <option>Universidad incompleta</option>
+                                    <option>Instituto</option>
+                                    <option>Instituto incompleto</option>
+                                    <option>Ninguno</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <span class="title">Área Personal</span>
+
+                        <div class="row py-2">
+                            <div class="col-md-12 mb-3">
+                                <label for="Personalidad_aspectos">Menciona tres aspectos que caracterizan tu personalidad</label>
+                                <textarea class="form-control" placeholder="" id="Personalidad_aspectos" name="Personalidad_aspectos"></textarea>  
+                            </div>
+                            <div class="col-md-12 mb-0">
+                                <div class="form-group">
+                                    <p>¿Qué dificultades enfrentas actualmente o qué crees que puede interferir con tus estudios? (Marca todas alternativas que puedan ser correctas)</p>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <div class="mb-3 px-1">
+                            <div class="form-check" >
+                                <input class="form-check-input" type="checkbox" value="Dudas con respecto a la elección de la carrera." id="uno" name="uno">
+                                <label class="form-check-label" for="uno" >
+                                    Dudas con respecto a la elección de la carrera.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Presión de mis padres." id="dos" name="dos">
+                                <label class="form-check-label" for="dos" >
+                                    Presión de mis padres.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Falta de un método de estudio eficaz." id="tres" name="tres">
+                                <label class="form-check-label" for="tres" >
+                                    Falta de un método de estudio eficaz.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Mala organización de mi tiempo." id="cuatro" name="cuatro" >
+                                <label class="form-check-label" for="cuatro" >
+                                    Mala organización de mi tiempo.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Dificultad para leer y comprender textos." id="cinco" name="cinco">
+                                <label class="form-check-label" for="cinco" >
+                                    Dificultad para leer y comprender textos.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Falta de interés o motivación para estudiar." id="seis" name="seis">
+                                <label class="form-check-label" for="seis" >
+                                    Falta de interés o motivación para estudiar.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Trabajo y estudio a la vez." id="siete" name="siete">
+                                <label class="form-check-label" for="siete" >
+                                    Trabajo y estudio a la vez.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Desactualización (hace años que dejé de estudiar)." id="ocho" name="ocho">
+                                <label class="form-check-label" for="ocho" >
+                                    Desactualización (hace años que dejé de estudiar).
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Tengo una enfermedad crítica o que requiere tratamiento." id="nueve" name="nueve">
+                                <label class="form-check-label" for="nueve" >
+                                    Tengo una enfermedad crítica o que requiere tratamiento.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Problemas personales." id="diez" name="diez">
+                                <label class="form-check-label" for="diez" >
+                                    Problemas personales.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Problemas familiares." id="once" name="once">
+                                <label class="form-check-label" for="once" >
+                                    Problemas familiares.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Problemas económicos." id="doce" name="doce">
+                                <label class="form-check-label" for="doce" >
+                                    Problemas económicos.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Otro." id="trece" name="trece">
+                                <label class="form-check-label" for="trece" >
+                                    Otro.
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit_button">ENVIAR</button>
+
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="text-left bg-light py-1 py-md-1 footer-text">
+        <div class="container">
+
+            <p class="mb-0">Ficha: Nº 01</p>
+            <p class="mb-0">Autor: Ing. Edir Gonzano Rojas</p>
+            <p class="mb-0">Revisado por: Dr. Emiliano Huayre Ignacio</p>
+            
+        </div>
+    </footer>
+
+  <script>
+    // Prevenir que los formularios se envíen.
+    function preventFormSubmit() {
+        var forms = document.querySelectorAll('form');
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].addEventListener('submit', function(event) {
+                event.preventDefault();
+            });
+        }
+    }
+    window.addEventListener('load', preventFormSubmit);    
+
+    function handleFormSubmit(formObject) {
+        var submitButton = document.getElementById("submit_button");
+        submitButton.disabled = true; // Deshabilitar el botón
+
+
+
+
+        google.script.run.withSuccessHandler(function() {
+            // En caso de éxito, mostrar una alerta o realizar cualquier otra acción necesaria
+            Swal.fire({
+                title: 'Éxito',
+                text: 'Los datos han sido enviados exitosamente.',
+                icon: 'success'
+            });
+            document.getElementById("myForm").reset(); // Restablecer el formulario
+            submitButton.disabled = false; // Habilitar nuevamente el botón
+
+            
+        }).processForm(formObject);
+    }
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac95c313b7.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
